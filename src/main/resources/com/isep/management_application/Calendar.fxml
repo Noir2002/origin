@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.isep.management_application.CalendarController" spacing="10" alignment="TOP_CENTER">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+    <HBox alignment="CENTER" spacing="10">
+        <Button fx:id="previousMonth" text="◀ Last Month"/>
+        <Text fx:id="calendarTitle"/>
+        <Button fx:id="nextMonth" text="Next Month ▶"/>
+    </HBox>
+    <GridPane fx:id="calendar" alignment="CENTER" hgap="5" vgap="5">
+        <children>
+            <Label text="Monday" style="-fx-font-weight: bold" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <Label text="Tuesday" style="-fx-font-weight: bold" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+            <Label text="Wednesday" style="-fx-font-weight: bold" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+            <Label text="Thursday" style="-fx-font-weight: bold" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+            <Label text="Friday" style="-fx-font-weight: bold" GridPane.columnIndex="4" GridPane.rowIndex="0"/>
+            <Label text="Saturday" style="-fx-font-weight: bold" GridPane.columnIndex="5" GridPane.rowIndex="0"/>
+            <Label text="Sunday" style="-fx-font-weight: bold" GridPane.columnIndex="6" GridPane.rowIndex="0"/>
+        </children>
+    </GridPane>
+</VBox>

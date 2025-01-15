@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.isep.management_application.AddTaskController"
+      spacing="10"
+      style="-fx-padding: 10;">
+    <GridPane hgap="10" vgap="10">
+        <Label text="Task ID:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="taskIdField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Task Name:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="taskNameField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Task Budget:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="taskBudgetField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Task Real Cost:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <TextField fx:id="taskRealCostField" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <Label text="Task Date Limit:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <TextField fx:id="taskDateLimitField" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+        <Label text="Task Priority:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+        <TextField fx:id="taskPriorityField" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+        <Label text="Task Category:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="taskCategoryField" GridPane.rowIndex="6" GridPane.columnIndex="1">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="a faire"/>
+                    <String fx:value="en cours"/>
+                    <String fx:value="termine"/>
+                </FXCollections>
+            </items>
+        </ComboBox>
+
+        <Label text="Task Description:" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+        <TextField fx:id="taskDescriptionField" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+
+        <Label text="Task Comments:" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+        <TextField fx:id="taskCommentsField" GridPane.rowIndex="8" GridPane.columnIndex="1"/>
+
+        <Label text="Task Members:" GridPane.rowIndex="9" GridPane.columnIndex="0"/>
+        <ListView fx:id="taskMembersListView" GridPane.rowIndex="9" GridPane.columnIndex="1" VBox.vgrow="ALWAYS"/>
+        <HBox spacing="10" GridPane.rowIndex="10" GridPane.columnIndex="1">
+            <Button text="Add Member" onAction="#handleAddMemberButton"/>
+            <Button text="Delete Member" onAction="#handleDeleteMemberButton"/>
+        </HBox>
+    </GridPane>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Save" onAction="#handleAddButton"/>
+        <Button text="Cancel" onAction="#handleCancelButton"/>
+    </HBox>
+</VBox>
