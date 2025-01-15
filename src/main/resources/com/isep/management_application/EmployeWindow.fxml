@@ -1,0 +1,62 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.isep.management_application.Main"
+            prefHeight="600.0" prefWidth="800.0">
+
+    <!-- 左侧导航栏 -->
+    <left>
+        <VBox spacing="10" style="-fx-background-color: #f0f0f0;">
+            <Button text="Employe" prefWidth="150"
+                    style="-fx-background-color: #ffffff;" />
+            <Button text="Projet" prefWidth="150" />
+            <Button text="Calendar" prefWidth="150" />
+            <Button text="Report" prefWidth="150" />
+        </VBox>
+    </left>
+
+    <!-- 主内容区域 -->
+    <center>
+        <VBox spacing="10" padding="10">
+            <Label text="Employes" style="-fx-font-size: 16px;"/>
+            <ListView fx:id="employeeListView" VBox.vgrow="ALWAYS"/>
+            <HBox spacing="10" alignment="CENTER_RIGHT">
+                <Button text="Create" onAction="#handleCreateButton"/>
+                <Button text="Delete" onAction="#handleDeleteButton"/>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>
+
+        <!-- employeeDetails.fxml -->
+        <?xml version="1.0" encoding="UTF-8"?>
+        <?import javafx.scene.control.*?>
+        <?import javafx.scene.layout.*?>
+        <?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.isep.management_application.EmployeDetailWindowController"
+      spacing="10" padding="20"
+      prefWidth="400" prefHeight="300">
+
+<Label text="ID:"/>
+<TextField fx:id="idField"/>
+
+<Label text="Nom:"/>
+<TextField fx:id="nomField"/>
+
+<Label text="Role:"/>
+<TextField fx:id="roleField"/>
+
+<TextArea fx:id="descriptionArea" VBox.vgrow="ALWAYS"/>
+
+<HBox alignment="CENTER_RIGHT" spacing="10">
+    <Button text="Save" onAction="#handleSaveButton"/>
+</HBox>
+</VBox>

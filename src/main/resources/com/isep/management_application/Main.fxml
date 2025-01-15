@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.isep.management_application.MainController"
+            fx:id="mainPane"
+            prefHeight="600.0" prefWidth="800.0">
+
+    <left>
+        <VBox fx:id="sidebarContainer" prefWidth="200" style="-fx-background-color: #F0F0F0;"/>
+    </left>
+
+    <center>
+        <VBox spacing="10">
+            <Label text="Employes"
+                   style="-fx-font-size: 16px; -fx-padding: 10 0 0 10;"/>
+            <ListView fx:id="employeeListView" VBox.vgrow="ALWAYS"
+                      style="-fx-background-insets: 10;"/>
+            <HBox spacing="10" alignment="CENTER_RIGHT"
+                  style="-fx-padding: 0 10 10 0;">
+                <Button text="Create"
+                        onAction="#handleCreateButton"
+                        style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+                <Button text="Delete"
+                        onAction="#handleDeleteButton"
+                        style="-fx-background-color: #f44336; -fx-text-fill: white;"/>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

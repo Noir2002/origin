@@ -1,0 +1,16 @@
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.isep.management_application.EmployeController">
+    <children>
+        <TableView fx:id="employeeTable" layoutX="20" layoutY="20" prefHeight="200" prefWidth="400">
+            <!-- 定义表格列 -->
+        </TableView>
+        <TextField fx:id="nameField" layoutX="20" layoutY="240" promptText="Name" />
+        <TextField fx:id="positionField" layoutX="20" layoutY="280" promptText="Position" />
+        <Button layoutX="20" layoutY="320" text="Add Employee" onAction="#handleAddEmployee" />
+        <Button layoutX="120" layoutY="320" text="Edit Employee" onAction="#handleEditEmployee" />
+        <Button layoutX="220" layoutY="320" text="Delete Employee" onAction="#handleDeleteEmployee" />
+    </children>
+</AnchorPane>

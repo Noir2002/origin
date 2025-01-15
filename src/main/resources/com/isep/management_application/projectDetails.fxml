@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="10" style="-fx-padding: 10;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.isep.management_application.ProjectDetailsController">
+    <GridPane hgap="10" vgap="10">
+        <Label text="ID:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <TextField fx:id="idField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+        <Label text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <TextField fx:id="projectNameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+        <Label text="Budget:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <TextField fx:id="budgetField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+        <Label text="Real Cost:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <TextField fx:id="realCostField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+        <Label text="Date Limit:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+        <TextField fx:id="dateLimitField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <columnConstraints>
+         <ColumnConstraints />
+         <ColumnConstraints />
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+      </rowConstraints>
+    </GridPane>
+
+    <Label text="Members:" />
+    <ListView fx:id="memberListView" prefHeight="149.0" prefWidth="763.0" VBox.vgrow="ALWAYS" />
+    <HBox spacing="10">
+        <Button onAction="#handleAddMemberButton" text="Add Member" />
+        <Button onAction="#handleDeleteMemberButton" text="Delete Member" />
+    </HBox>
+
+    <Label text="Kanban:" />
+    <HBox prefHeight="165.0" prefWidth="763.0" spacing="10">
+        <VBox prefHeight="378.0" prefWidth="247.0" spacing="10">
+            <Label text="A Faire" />
+            <ListView fx:id="aFaireListView" prefHeight="241.0" prefWidth="247.0" VBox.vgrow="ALWAYS" />
+        </VBox>
+        <VBox spacing="10">
+            <Label text="En Cours" />
+            <ListView fx:id="enCoursListView" prefHeight="142.0" prefWidth="247.0" VBox.vgrow="ALWAYS" />
+        </VBox>
+        <VBox spacing="10">
+            <Label text="Termine" />
+            <ListView fx:id="termineListView" VBox.vgrow="ALWAYS" />
+        </VBox>
+    </HBox>
+    <HBox spacing="10">
+        <Button onAction="#handleAddTaskButton" text="Add Task" />
+        <Button onAction="#handleDeleteTaskButton" text="Delete Task" />
+    </HBox>
+
+    <Label text="Add Task Details:" />
+    <GridPane hgap="10" vgap="10">
+        <Label text="Task ID:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <TextField fx:id="taskIdField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+        <Label text="Task Name:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <TextField fx:id="taskNameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+        <Label text="Task Budget:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <TextField fx:id="taskBudgetField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+        <Label text="Task Real Cost:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <TextField fx:id="taskRealCostField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+        <Label text="Task Date Limit:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+        <TextField fx:id="taskDateLimitField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+        <Label text="Task Priority:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+        <TextField fx:id="taskPriorityField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+        <Label text="Task Category:" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+        <ComboBox fx:id="taskCategoryField" GridPane.columnIndex="1" GridPane.rowIndex="6">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="a faire" />
+                    <String fx:value="en cours" />
+                    <String fx:value="termine" />
+                </FXCollections>
+            </items>
+        </ComboBox>
+
+        <Label text="Task Description:" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+        <TextField fx:id="taskDescriptionField" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+
+        <Label text="Task Comments:" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+        <TextField fx:id="taskCommentsField" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+
+        <Label text="Task Members:" GridPane.columnIndex="0" GridPane.rowIndex="9" />
+        <ListView fx:id="taskMembersListView" GridPane.columnIndex="1" GridPane.rowIndex="9" VBox.vgrow="ALWAYS" />
+        <HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="10">
+            <Button onAction="#handleAddMemberButton" text="Add Member" />
+            <Button onAction="#handleDeleteMemberButton" text="Delete Member" />
+        </HBox>
+      <columnConstraints>
+         <ColumnConstraints />
+         <ColumnConstraints />
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+      </rowConstraints>
+    </GridPane>
+
+    <HBox alignment="CENTER_RIGHT" spacing="10">
+        <Button onAction="#handleSaveButton" text="Save" />
+        <Button onAction="#handleCancelButton" text="Cancel" />
+    </HBox>
+</VBox>
