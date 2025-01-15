@@ -10,6 +10,8 @@ module com.isep.management_application {
     requires jdk.javadoc;
     requires kernel;
 
+    requires layout;
+
     opens com.isep.management_application to javafx.fxml;
     exports com.isep.management_application;
 }
